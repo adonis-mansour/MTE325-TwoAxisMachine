@@ -559,7 +559,7 @@
             <File>
               <FileName>motordriver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\motordriver.c</FilePath>
+              <FilePath>..\Src\motordriver.c</FilePath>
             </File>
             <File>
               <FileName>params.c</FileName>

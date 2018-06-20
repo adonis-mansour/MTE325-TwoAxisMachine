@@ -1,4 +1,4 @@
-.\stm32f401re-nucleo\motordriver.o: motordriver.c
+.\stm32f401re-nucleo\motordriver.o: ..\Src\motordriver.c
 .\stm32f401re-nucleo\motordriver.o: ..\Inc\example.h
 .\stm32f401re-nucleo\motordriver.o: ..\Inc\example_usart.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\BSP\X-NUCLEO-IHM02A1\NUCLEO-F401RE\xnucleoihm02a1_interface.h
@@ -37,4 +37,4 @@
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\BSP\Components\L6470\L6470.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\BSP\Components\Common\microstepping_motor.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\BSP\X-NUCLEO-IHM02A1\xnucleoihm02a1.h
-.\stm32f401re-nucleo\motordriver.o: MotorDriver.h
+.\stm32f401re-nucleo\motordriver.o: ..\Inc\motordriver.h
