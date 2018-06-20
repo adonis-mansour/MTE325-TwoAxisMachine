@@ -3,29 +3,29 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.24.2.0
-Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Allyson Giannikouris, university of Waterloo, LIC=----
+IDE-Version: µVision V5.25.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Kalen Saldanha, University Of Waterloo, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.24.1
+Toolchain:       MDK-Lite  Version: 5.25.2.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 5 (build 528)
-Assembler:       Armasm.exe V5.06 update 5 (build 528)
-Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
-Library Manager: ArmAr.exe V5.06 update 5 (build 528)
-Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
-CPU DLL:         SARMCM3.DLL V5.24.1
-Dialog DLL:      DCM.DLL V1.16.0.0
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.25.2.0
+Dialog DLL:      DCM.DLL V1.17.1.0
 Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
-Dialog DLL:      TCM.DLL V1.32.0.0
+Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-C:\Users\Allyson\Documents\twoAxisMachines\folderReduction\studentRelease\STM32CubeExpansion-SPN2_V1.1.0\Projects\MDK-ARM\Project.uvprojx
-Project File Date:  03/01/2018
+C:\Users\User\Desktop\MTe_325\TwoAxisMachine-master-15d2d3f5a9aee842cbe0234ce01f0e3281acb7fa\STM32CubeExpansion-SPN2_V1.1.0\Projects\MDK-ARM\Project.uvprojx
+Project File Date:  06/07/2018
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'STM32F401RE-Nucleo'
 compiling stm32f4xx_hal.c...
 compiling stm32f4xx_hal_rcc.c...
@@ -50,42 +50,74 @@ compiling xnucleoihm02a1_interface.c...
 compiling stm32f4xx_hal_msp.c...
 compiling stm32f4xx_it.c...
 compiling example.c...
+..\Src\example.c(155): warning:  #128-D: loop is not reachable
+        for (i=0; i<MovementPerRevolution; i++)
+..\Src\example.c: 1 warning, 0 errors
 compiling example_usart.c...
 compiling params.c...
-assembling startup_stm32f401xe.s...
 compiling main.c...
-..\Src\main.c(148): warning:  #177-D: function "Error_Handler"  was declared but never referenced
+..\Inc\motordriver.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __EXAMPLE_H */
+..\Src\main.c(105): error:  #20: identifier "StepperMotorBoardHandle" is undefined
+  		StepperMotorBoardHandle->Command->HardStop(board, device);
+..\Src\main.c(105): error:  #20: identifier "board" is undefined
+  		StepperMotorBoardHandle->Command->HardStop(board, device);
+..\Src\main.c(105): error:  #20: identifier "device" is undefined
+  		StepperMotorBoardHandle->Command->HardStop(board, device);
+..\Src\main.c(192): warning:  #111-D: statement is unreachable
+    MicrosteppingMotor_Example_01();
+..\Src\main.c(118): warning:  #177-D: variable "var"  was declared but never referenced
+  	int var = 0; 
+..\Src\main.c(164): warning:  #177-D: variable "output"  was declared but never referenced
+  	char output;
+..\Src\main.c(230): warning:  #177-D: function "Error_Handler"  was declared but never referenced
   static void Error_Handler(void)
-..\Src\main.c: 1 warning, 0 errors
+..\Src\main.c: 5 warnings, 3 errors
+assembling startup_stm32f401xe.s...
+compiling motordriver.c...
+MotorDriver.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif /* __EXAMPLE_H */
+motordriver.c(55): warning:  #1-D: last line of file ends without a newline
+  }
+motordriver.c(9): warning:  #177-D: variable "Step"  was declared but never referenced
+    uint32_t Step;
+motordriver.c(10): warning:  #177-D: variable "Speed"  was declared but never referenced
+    uint32_t Speed;
+motordriver.c(11): warning:  #177-D: variable "MovementPerRevolution"  was declared but never referenced
+    uint8_t MovementPerRevolution;
+motordriver.c(12): warning:  #177-D: variable "i"  was declared but never referenced
+    uint8_t i;
+motordriver.c(13): warning:  #177-D: variable "board"  was declared but never referenced
+    uint8_t board, device;
+motordriver.c(13): warning:  #177-D: variable "device"  was declared but never referenced
+    uint8_t board, device;
+motordriver.c: 8 warnings, 0 errors
 compiling system_stm32f4xx.c...
-linking...
-Program Size: Code=22532 RO-data=2104 RW-data=912 ZI-data=1576  
-FromELF: creating hex file...
-After Build - User command #1: C:\Keil_v5\\ARM\ARMCC\bin\fromelf.exe --bin --output=C:\Users\Allyson\Documents\twoAxisMachines\folderReduction\studentRelease\STM32CubeExpansion-SPN2_V1.1.0\Projects\MDK-ARM\STM32F401RE-Nucleo\STM32F401RE-Nucleo.bin .\STM32F401RE-Nucleo\STM32F401RE-Nucleo.axf
-".\STM32F401RE-Nucleo\STM32F401RE-Nucleo.axf" - 0 Error(s), 1 Warning(s).
+".\STM32F401RE-Nucleo\STM32F401RE-Nucleo.axf" - 3 Error(s), 14 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.5.2.0.pack
-                ARM.CMSIS.5.2.0
+                http://www.keil.com/pack/ARM.CMSIS.5.3.0.pack
+                ARM.CMSIS.5.3.0
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 5.0.2
+   * Component: CORE Version: 5.1.1
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.11.0.pack
-                Keil.STM32F4xx_DFP.2.11.0
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.13.0.pack
+                Keil.STM32F4xx_DFP.2.13.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_STM32F401RE-Nucleo
-  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.2.0\CMSIS\Include
-  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:5.0.2
-Build Time Elapsed:  00:00:16
+   * Component: ARM::CMSIS:CORE:5.1.1
+Target not created.
+Build Time Elapsed:  00:00:17
 </pre>
 </body>
 </html>

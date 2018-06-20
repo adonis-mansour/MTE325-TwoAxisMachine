@@ -10,13 +10,13 @@
       <TargetName>STM32F401RE-Nucleo</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F401RETx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F4xx_DFP.2.11.0</PackID>
+          <PackID>Keil.STM32F4xx_DFP.2.13.0</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
           <Cpu>IRAM(0x20000000,0x18000) IROM(0x08000000,0x80000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -324,6 +324,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -556,6 +557,11 @@
               <FilePath>..\Src\main.c</FilePath>
             </File>
             <File>
+              <FileName>motordriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\motordriver.c</FilePath>
+            </File>
+            <File>
               <FileName>params.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\params.c</FilePath>
@@ -575,6 +581,11 @@
         <Group>
           <GroupName>Example/User/Inc</GroupName>
           <Files>
+            <File>
+              <FileName>motordriver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\motordriver.h</FilePath>
+            </File>
             <File>
               <FileName>example_usart.h</FileName>
               <FileType>5</FileType>

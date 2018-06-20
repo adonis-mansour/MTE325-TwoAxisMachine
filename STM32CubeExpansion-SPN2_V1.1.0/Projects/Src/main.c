@@ -35,8 +35,13 @@
 #include "example.h"
 #include "example_usart.h"
 #include "stm32f4xx_hal_adc.h"
-// jon was here
+#include "stm32f4xx_it.h"
+#include "motordriver.h"
+
+
 #define TEST_MOTOR	//!< Comment out this line to test the ADC
+
+
 
 /**
   * @defgroup   MotionControl
@@ -62,8 +67,8 @@
   * @{
   */
 
-//#define MICROSTEPPING_MOTOR_EXAMPLE        //!< Uncomment to performe the standalone example
-#define MICROSTEPPING_MOTOR_USART_EXAMPLE  //!< Uncomment to performe the USART example
+#define MICROSTEPPING_MOTOR_EXAMPLE        //!< Uncomment to performe the standalone example
+//#define MICROSTEPPING_MOTOR_USART_EXAMPLE  //!< Uncomment to performe the USART example
 #if ((defined (MICROSTEPPING_MOTOR_EXAMPLE)) && (defined (MICROSTEPPING_MOTOR_USART_EXAMPLE)))
   #error "Please select an option only!"
 #elif ((!defined (MICROSTEPPING_MOTOR_EXAMPLE)) && (!defined (MICROSTEPPING_MOTOR_USART_EXAMPLE)))
@@ -88,21 +93,100 @@ __IO uint16_t uhADCxConvertedValue = 0;
 static void Error_Handler(void);
 uint16_t Read_ADC(void);
 
+void	MotorLimitSwitchDemo(void){
+	
+}
+
+
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  switch (GPIO_Pin)
+  {
+  case GPIO_PIN_5:
+		StepperMotorBoardHandle->Command->HardStop(board, device);
+	break;
+	case GPIO_PIN_6:
+		StepperMotorBoardHandle->Command->HardStop(board, device);
+	break;	
+	}
+}
+
 /**
   * @brief The FW main module
   */
 int main(void)
 {
+	int var = 0; 
+
   /* NUCLEO board initialization */
 	/* Init for UART, ADC, GPIO and SPI */
   NUCLEO_Board_Init();
-  
+	
+	
   /* X-NUCLEO-IHM02A1 initialization */
   BSP_Init();
 	
+	
+	GPIO_InitTypeDef GPIO_InitStruct;
+	// PB_ signal gen input
+	
+//    GPIO_InitStruct.Pin = GPIO_PIN_5;
+//    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+//    GPIO_InitStruct.Pull = GPIO_PULLUP;
+//    GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
+//    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+	
+	    /* Configure Button pin as input with External interrupt */
+    GPIO_InitStruct.Pin = GPIO_PIN_5;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING; 
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+		
+		GPIO_InitStruct.Pin = GPIO_PIN_6;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING; 
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    
+    /* Enable and set Button EXTI Interrupt to the lowest priority */
+    HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0x0F, 0x00);
+    HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+		EXTI9_5_IRQHandler();
+		
+		MicrosteppingMotor_Example_01();
+
+		
+		
+		//=========================
+		
 	#ifdef NUCLEO_USE_USART
   /* Transmit the initial message to the PC via UART */
   USART_TxWelcomeMessage();
+	USART_Transmit(&huart2, "test\n\r");
+	char output;
+	
+	MotorLimitSwitchDemo();
+	
+	
+	
+	
+	
+	while (1){
+//		if (HAL_GPIO_ReadPin( GPIOB, GPIO_PIN_5) == GPIO_PIN_SET)
+//		{
+//			//USART_Transmit(&huart2, "yes\n\r");
+//			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_SET);
+//		}
+//		else 
+//		{
+//			//USART_Transmit(&huart2, "no\n\r");
+//						HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_RESET);
+
+//		}
+	}
+		//USART_Transmit(&huart2, output);
+	
+
 #endif
 	
 #if defined (MICROSTEPPING_MOTOR_EXAMPLE)
@@ -195,3 +279,4 @@ uint16_t Read_ADC(void)
   */ /* End of MotionControl */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+

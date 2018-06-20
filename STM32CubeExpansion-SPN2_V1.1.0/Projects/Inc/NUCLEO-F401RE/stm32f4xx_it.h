@@ -61,7 +61,8 @@ void EXTI1_IRQHandler(void);
 void EXTI15_10_IRQHandler(void);
 void SysTick_Handler(void);
 void USART2_IRQHandler(void);
-
+void EXTI2_IRQHandler(void);
+void EXTI9_5_IRQHandler(void);
 /**
   * @}
   */ /* End of STM32F4XX_IT_Exported_Functions */

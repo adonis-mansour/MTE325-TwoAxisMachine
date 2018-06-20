@@ -104,6 +104,11 @@ void EXTI15_10_IRQHandler(void)
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
 }
 
+void EXTI9_5_IRQHandler(void)
+{
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);
+}
+
 /**
   * @}
   */ /* End of STM32F4XX_IT_Exported_Functions */

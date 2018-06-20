@@ -94,9 +94,9 @@ void MicrosteppingMotor_Example_01(void)
 {
 #define MPR_1     4			  //!< Motor Movements Per Revolution 1st option
 #define MPR_2     8			  //!< Motor Movements Per Revolution 2nd option
-#define DELAY_1   1000		//!< Delay time 1st option
-#define DELAY_2   2500		//!< Delay time 2nd option
-#define DELAY_3   10000   //!< Delay time 3rd option
+#define DELAY_1   0		//!< Delay time 1st option
+#define DELAY_2   0		//!< Delay time 2nd option
+#define DELAY_3   0   //!< Delay time 3rd option
   
   uint32_t Step;
   uint32_t Speed;
@@ -119,6 +119,7 @@ void MicrosteppingMotor_Example_01(void)
   /* Get the parameters for the motor connected with the 1st stepper motor driver of the 1st stepper motor expansion board */
   MotorParameterDataGlobal = GetMotorParameterInitData();
   
+	// configures motors from database
   for (id = 0; id < EXPBRD_MOUNTED_NR; id++)
   {
     StepperMotorBoardHandle = BSP_GetExpansionBoardHandle(EXPBRD_ID(id));
@@ -132,8 +133,8 @@ void MicrosteppingMotor_Example_01(void)
   #endif
   
   /****************************************************************************/
-  
-  MovementPerRevolution = MPR_1;
+ for (i=0; i<10; i++ )
+ { MovementPerRevolution = 1;
   for (board = EXPBRD_ID(0); board <= EXPBRD_ID(EXPBRD_MOUNTED_NR-1); board++)
   {
     StepperMotorBoardHandle = BSP_GetExpansionBoardHandle(board);
@@ -143,16 +144,23 @@ void MicrosteppingMotor_Example_01(void)
       /* Get the parameters for the motor connected with the actual stepper motor driver of the actual stepper motor expansion board */
       MotorParameterDataSingle = MotorParameterDataGlobal+((board*L6470DAISYCHAINSIZE)+device);
       Step = ((uint32_t)MotorParameterDataSingle->fullstepsperrevolution * pow(2, MotorParameterDataSingle->step_sel)) / MovementPerRevolution;
-      
+      while(1){
+				        StepperMotorBoardHandle->Command->Run(board, device, L6470_DIR_FWD_ID, 20000);
+								HAL_Delay(3000);
+					      StepperMotorBoardHandle->Command->HardStop(board, device);
+								HAL_Delay(3000);
+								
+	
+			}
       for (i=0; i<MovementPerRevolution; i++)
       {
         StepperMotorBoardHandle->Command->Move(board, device, L6470_DIR_FWD_ID, Step);
         while(StepperMotorBoardHandle->Command->CheckStatusRegisterFlag(board, device, BUSY_ID) == 0);
-        HAL_Delay(DELAY_1);
+       // HAL_Delay(DELAY_1);
       }
     }
   }
-  
+}
   HAL_Delay(DELAY_2);
   
   for (board = EXPBRD_ID(0); board <= EXPBRD_ID(EXPBRD_MOUNTED_NR-1); board++)
@@ -267,7 +275,7 @@ uint32_t pow(uint8_t base, uint8_t exponent)
   * @param  GPIO_Pin: Specifies the port pin connected to corresponding EXTI line.
   * @retval None
   */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+void HAL_GPIO_EXTI_Callback2(uint16_t GPIO_Pin)
 {
   switch (GPIO_Pin)
   {
