@@ -35,7 +35,7 @@
 #include "example.h"
 #include "example_usart.h"
 #include "stm32f4xx_hal_adc.h"
-
+// jon was here
 #define TEST_MOTOR	//!< Comment out this line to test the ADC
 
 /**
