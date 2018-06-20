@@ -6,5 +6,7 @@
 #endif
 
 void InitializeMotors(void);
+void stop(void);
+void run(void);
 
 #endif /* __EXAMPLE_H */
