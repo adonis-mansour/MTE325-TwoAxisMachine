@@ -104,10 +104,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   switch (GPIO_Pin)
   {
   case GPIO_PIN_5:
-		StepperMotorBoardHandle->Command->HardStop(board, device);
+		stop();
 	break;
 	case GPIO_PIN_6:
-		StepperMotorBoardHandle->Command->HardStop(board, device);
+		stop();
 	break;	
 	}
 }
