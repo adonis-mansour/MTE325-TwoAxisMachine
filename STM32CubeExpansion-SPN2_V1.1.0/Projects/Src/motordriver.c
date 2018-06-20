@@ -4,19 +4,18 @@
 #include "xnucleoihm02a1.h"
 #include "MotorDriver.h"
 
+ uint32_t Step;
+ uint32_t Speed;
+ uint8_t MovementPerRevolution;
+ uint8_t i;
+ uint8_t board, device;
+ uint8_t id;
+  
+ StepperMotorBoardHandle_t *StepperMotorBoardHandle;
+ MotorParameterData_t *MotorParameterDataGlobal, *MotorParameterDataSingle;
+
 void InitializeMotors(void)
-{
-  uint32_t Step;
-  uint32_t Speed;
-  uint8_t MovementPerRevolution;
-  uint8_t i;
-  uint8_t board, device;
-  
-  uint8_t id;
-  
-  StepperMotorBoardHandle_t *StepperMotorBoardHandle;
-  MotorParameterData_t *MotorParameterDataGlobal, *MotorParameterDataSingle;
-  
+{ 
   #ifdef NUCLEO_USE_USART
   USART_Transmit(&huart2, "Initial values for registers:\n\r");
   USART_PrintAllRegisterValues();
@@ -52,4 +51,8 @@ void InitializeMotors(void)
 //    StepperMotorBoardHandle->Command->PerformPreparedApplicationCommand();
 //  }
 
+}
+void stop (void)
+{
+	StepperMotorBoardHandle->Command->HardStop(board, device);
 }
