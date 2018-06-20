@@ -37,3 +37,4 @@
 .\stm32f401re-nucleo\main.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h
 .\stm32f401re-nucleo\main.o: ..\..\Drivers\BSP\STM32F4xx-Nucleo\stm32f4xx_nucleo.h
 .\stm32f401re-nucleo\main.o: ..\Inc\NUCLEO-F401RE\stm32f4xx_it.h
+.\stm32f401re-nucleo\main.o: ..\Inc\motordriver.h

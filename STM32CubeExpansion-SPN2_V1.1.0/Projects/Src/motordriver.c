@@ -1,3 +1,4 @@
+#include "stdint.h"
 #include "example.h"
 #include "example_usart.h"
 #include "params.h"
@@ -14,8 +15,7 @@
  volatile uint16_t LSFWD = GPIO_PIN_5;
  volatile uint16_t LSREV = GPIO_PIN_6;
  
- #define FWD 1
- #define REV 0
+
 // #define LSLS
 // #define LSRS
   
@@ -65,7 +65,7 @@ void stop (void)
 	StepperMotorBoardHandle->Command->HardStop(board, device);
 }
 
-void run(uint8_t direction, uint8_t speed)
+void run(uint8_t direction, uint32_t speed)
 {
 	if (direction == FWD && LSFWD) {
 		StepperMotorBoardHandle->Command->Run(board, device, L6470_DIR_FWD_ID, speed);

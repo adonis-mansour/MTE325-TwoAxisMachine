@@ -24,6 +24,7 @@
 ".\stm32f401re-nucleo\example_usart.o"
 ".\stm32f401re-nucleo\example.o"
 ".\stm32f401re-nucleo\main.o"
+".\stm32f401re-nucleo\motordriver.o"
 ".\stm32f401re-nucleo\params.o"
 ".\stm32f401re-nucleo\system_stm32f4xx.o"
 ".\stm32f401re-nucleo\startup_stm32f401xe.o"

@@ -1,11 +1,11 @@
 .\stm32f401re-nucleo\motordriver.o: ..\Src\motordriver.c
+.\stm32f401re-nucleo\motordriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\stm32f401re-nucleo\motordriver.o: ..\Inc\example.h
 .\stm32f401re-nucleo\motordriver.o: ..\Inc\example_usart.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\BSP\X-NUCLEO-IHM02A1\NUCLEO-F401RE\xnucleoihm02a1_interface.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f401xe.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-.\stm32f401re-nucleo\motordriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\CMSIS\Include\core_cmInstr.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\CMSIS\Include\core_cmFunc.h
 .\stm32f401re-nucleo\motordriver.o: ..\..\Drivers\CMSIS\Include\core_cmSimd.h
