@@ -36,9 +36,6 @@
 #include "example_usart.h"
 #include "stm32f4xx_hal_adc.h"
 #include "stm32f4xx_it.h"
-#include "motordriver.h"
-
-
 #define TEST_MOTOR	//!< Comment out this line to test the ADC
 
 
@@ -93,8 +90,14 @@ __IO uint16_t uhADCxConvertedValue = 0;
 static void Error_Handler(void);
 uint16_t Read_ADC(void);
 
+// Run motor FWD and Backwards for 5 secs each in a loop
 void	MotorLimitSwitchDemo(void){
-	
+	while(1){
+		run(FWD, 2000);
+		HAL_Delay(5000);
+		run(REV, 2000);
+		HAL_Delay(5000);
+	}
 }
 
 
@@ -103,7 +106,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   switch (GPIO_Pin)
   {
-  case GPIO_PIN_5:
+  	case GPIO_PIN_5:
 		stop();
 	break;
 	case GPIO_PIN_6:

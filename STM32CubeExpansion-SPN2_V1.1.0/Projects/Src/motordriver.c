@@ -10,6 +10,13 @@
  uint8_t i;
  uint8_t board, device;
  uint8_t id;
+ 
+ const uint8_t FWD = 1;
+ const unit8_t REV = 0;
+ const unit16_t LSFWD = GPIO_PIN5;
+ const unit16_t LSREV = GPIO_PIN6;
+ const unit16_t LSLS;
+ const unit16_t LSRS;
   
  StepperMotorBoardHandle_t *StepperMotorBoardHandle;
  MotorParameterData_t *MotorParameterDataGlobal, *MotorParameterDataSingle;
@@ -56,3 +63,15 @@ void stop (void)
 {
 	StepperMotorBoardHandle->Command->HardStop(board, device);
 }
+
+void run(unit8_t direction, unit8_t speed)
+{
+	if (direction = FWD && LSFWD) {
+		StepperMotorBoardHandle->Command->Run(board, device, L6470_DIR_FWD_ID, speed);
+	}
+	else if (direction = REV && LSREV) {
+		StepperMotorBoardHandle->Command->Run(board, device, L6470_DIR_REV_ID, speed);
+	}
+}
+
+
