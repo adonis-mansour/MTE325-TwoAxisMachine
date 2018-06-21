@@ -92,26 +92,27 @@ uint16_t Read_ADC(void);
 
 // Run motor FWD and Backwards for 5 secs each in a loop
 void	MotorLimitSwitchDemo(void){
-	while(1){
-		run(FWD, 2000);
-		HAL_Delay(5000);
-		run(REV, 2000);
-		HAL_Delay(5000);
-	}
+	run_motor(FWD, 20000);
+	HAL_Delay(5000);
+	run_motor(REV, 20000);
+	HAL_Delay(5000);
 }
 
 
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+	USART_Transmit(&huart2, "INTERUPT");
+	
   switch (GPIO_Pin)
   {
-  	case GPIO_PIN_5:
-		stop();
-	break;
-	case GPIO_PIN_6:
-		stop();
-	break;	
+		case GPIO_PIN_8:
+			stop_motor();
+			break;
+		
+		case GPIO_PIN_6:
+			stop_motor();
+			break;	
 	}
 }
 
@@ -130,7 +131,10 @@ int main(void)
   /* X-NUCLEO-IHM02A1 initialization */
   BSP_Init();
 	
+	USART_Transmit(&huart2, "Initializing Motors...\n\r");
+	InitializeMotors();
 	
+	USART_Transmit(&huart2, "GPIO Initialization...\n\r");
 	GPIO_InitTypeDef GPIO_InitStruct;
 	// PB_ signal gen input
 	
@@ -141,22 +145,20 @@ int main(void)
 //    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 	
 	    /* Configure Button pin as input with External interrupt */
-    GPIO_InitStruct.Pin = GPIO_PIN_5;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING; 
+    GPIO_InitStruct.Pin = GPIO_PIN_8;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING; 
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 		
 		GPIO_InitStruct.Pin = GPIO_PIN_6;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING; 
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING; 
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
     
     /* Enable and set Button EXTI Interrupt to the lowest priority */
     HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0x0F, 0x00);
     HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 		EXTI9_5_IRQHandler();
-		
-		MicrosteppingMotor_Example_01();
 
 		
 		
@@ -168,13 +170,10 @@ int main(void)
 	USART_Transmit(&huart2, "test\n\r");
 	char output;
 	
-	MotorLimitSwitchDemo();
-	
-	
-	
-	
-	
+	USART_Transmit(&huart2, "Running Demo...\n\r");
+
 	while (1){
+		MotorLimitSwitchDemo();
 //		if (HAL_GPIO_ReadPin( GPIOB, GPIO_PIN_5) == GPIO_PIN_SET)
 //		{
 //			//USART_Transmit(&huart2, "yes\n\r");

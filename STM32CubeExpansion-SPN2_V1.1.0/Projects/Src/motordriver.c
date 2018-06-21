@@ -12,8 +12,8 @@
  uint8_t board, device;
  uint8_t id;
  
- volatile uint16_t LSFWD = GPIO_PIN_5;
- volatile uint16_t LSREV = GPIO_PIN_6;
+ uint16_t LSFWD = GPIO_PIN_8;
+ uint16_t LSREV = GPIO_PIN_6;
  
 
 // #define LSLS
@@ -24,6 +24,7 @@
 
 void InitializeMotors(void)
 { 
+	
   #ifdef NUCLEO_USE_USART
   USART_Transmit(&huart2, "Initial values for registers:\n\r");
   USART_PrintAllRegisterValues();
@@ -60,17 +61,22 @@ void InitializeMotors(void)
 //  }
 
 }
-void stop (void)
+void stop_motor(void)
 {
-	StepperMotorBoardHandle->Command->HardStop(board, device);
+	USART_Transmit(&huart2, "Stopping Motor\n\r");
+	StepperMotorBoardHandle->Command->SoftStop(board, device);
 }
 
-void run(uint8_t direction, uint32_t speed)
+void run_motor(uint8_t direction, uint32_t speed)
 {
-	if (direction == FWD && LSFWD) {
+	USART_Transmit(&huart2, "Running Motor.\n\r");
+	USART_Transmit(&huart2, num2hex(LSFWD, WORD_F));
+	if ((direction == FWD ) && (HAL_GPIO_ReadPin(GPIOB, LSFWD) == GPIO_PIN_RESET)) {
+		USART_Transmit(&huart2, "FWD\n\r");
 		StepperMotorBoardHandle->Command->Run(board, device, L6470_DIR_FWD_ID, speed);
 	}
-	else if (direction == REV && LSREV) {
+	else if ((direction == REV) && (HAL_GPIO_ReadPin(GPIOB, LSREV) == GPIO_PIN_RESET)) {
+		USART_Transmit(&huart2, "REV\n\r");
 		StepperMotorBoardHandle->Command->Run(board, device, L6470_DIR_REV_ID, speed);
 	}
 }

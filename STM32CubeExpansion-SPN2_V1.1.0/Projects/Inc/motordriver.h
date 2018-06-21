@@ -10,7 +10,7 @@
 #define REV ((uint8_t)0)
 
 void InitializeMotors(void);
-void stop(void);
-void run(uint8_t direction, uint32_t speed);
+void stop_motor(void);
+void run_motor(uint8_t direction, uint32_t speed);
 
 #endif /* __EXAMPLE_H */
