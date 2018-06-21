@@ -1513,56 +1513,56 @@ Image Symbol Table
     i.MX_SPI_Init                            0x08003884   Section        0  xnucleoihm02a1_interface.o(i.MX_SPI_Init)
     i.MX_USART2_Init                         0x0800388c   Section        0  xnucleoihm02a1_interface.o(i.MX_USART2_Init)
     i.MotorLimitSwitchDemo                   0x080038bc   Section        0  main.o(i.MotorLimitSwitchDemo)
-    i.NUCLEO_Board_Init                      0x080038e4   Section        0  xnucleoihm02a1_interface.o(i.NUCLEO_Board_Init)
-    i.NVIC_GetPriorityGrouping               0x0800390c   Section        0  stm32f4xx_hal_cortex.o(i.NVIC_GetPriorityGrouping)
-    NVIC_GetPriorityGrouping                 0x0800390d   Thumb Code    10  stm32f4xx_hal_cortex.o(i.NVIC_GetPriorityGrouping)
-    i.NVIC_SetPriority                       0x0800391c   Section        0  stm32f4xx_hal_cortex.o(i.NVIC_SetPriority)
-    NVIC_SetPriority                         0x0800391d   Thumb Code    32  stm32f4xx_hal_cortex.o(i.NVIC_SetPriority)
-    i.SPI_WaitOnFlagUntilTimeout             0x08003944   Section        0  stm32f4xx_hal_spi.o(i.SPI_WaitOnFlagUntilTimeout)
-    SPI_WaitOnFlagUntilTimeout               0x08003945   Thumb Code   276  stm32f4xx_hal_spi.o(i.SPI_WaitOnFlagUntilTimeout)
-    i.Step_s2_2_Acc                          0x08003a58   Section        0  l6470.o(i.Step_s2_2_Acc)
-    i.Step_s2_2_Dec                          0x08003a88   Section        0  l6470.o(i.Step_s2_2_Dec)
-    i.Step_s_2_FsSpd                         0x08003ab8   Section        0  l6470.o(i.Step_s_2_FsSpd)
-    i.Step_s_2_IntSpeed                      0x08003b0c   Section        0  l6470.o(i.Step_s_2_IntSpeed)
-    i.Step_s_2_MaxSpeed                      0x08003b3c   Section        0  l6470.o(i.Step_s_2_MaxSpeed)
-    i.Step_s_2_MinSpeed                      0x08003b6c   Section        0  l6470.o(i.Step_s_2_MinSpeed)
-    i.SysTick_Handler                        0x08003b9c   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
-    i.SystemClock_Config                     0x08003ba8   Section        0  xnucleoihm02a1_interface.o(i.SystemClock_Config)
-    i.SystemInit                             0x08003c40   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i.UART_EndTransmit_IT                    0x08003ca4   Section        0  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
-    UART_EndTransmit_IT                      0x08003ca5   Thumb Code    72  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
-    i.UART_Receive_IT                        0x08003cec   Section        0  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
-    UART_Receive_IT                          0x08003ced   Thumb Code   188  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
-    i.UART_SetConfig                         0x08003da8   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    UART_SetConfig                           0x08003da9   Thumb Code   640  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    i.UART_Transmit_IT                       0x08004070   Section        0  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
-    UART_Transmit_IT                         0x08004071   Thumb Code   112  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
-    i.UART_WaitOnFlagUntilTimeout            0x080040e0   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    UART_WaitOnFlagUntilTimeout              0x080040e1   Thumb Code   250  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    i.USART2_IRQHandler                      0x080041dc   Section        0  stm32f4xx_it.o(i.USART2_IRQHandler)
-    i.USART_ITCharManager                    0x080041f0   Section        0  example_usart.o(i.USART_ITCharManager)
-    i.USART_PrintAllRegisterValues           0x0800426c   Section        0  example_usart.o(i.USART_PrintAllRegisterValues)
-    i.USART_PrintRegisterValues              0x080042a8   Section        0  example_usart.o(i.USART_PrintRegisterValues)
-    i.USART_Transmit                         0x0800439c   Section        0  example_usart.o(i.USART_Transmit)
-    i.USART_TxWelcomeMessage                 0x080043c4   Section        0  example_usart.o(i.USART_TxWelcomeMessage)
-    i.User_LED_Blinking                      0x080044e8   Section        0  xnucleoihm02a1_interface.o(i.User_LED_Blinking)
-    i.__scatterload_copy                     0x0800451a   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08004528   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x0800452a   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.assert_failed                          0x08004538   Section        0  main.o(i.assert_failed)
-    i.mA_2_OcdTh                             0x0800453c   Section        0  l6470.o(i.mA_2_OcdTh)
-    i.mA_2_StallTh                           0x080045a0   Section        0  l6470.o(i.mA_2_StallTh)
-    i.main                                   0x08004604   Section        0  main.o(i.main)
-    i.num2hex                                0x080046e0   Section        0  example_usart.o(i.num2hex)
-    i.run_motor                              0x08004754   Section        0  motordriver.o(i.run_motor)
-    i.s_Step_2_FnSlpAcc                      0x08004814   Section        0  l6470.o(i.s_Step_2_FnSlpAcc)
-    i.s_Step_2_FnSlpDec                      0x08004844   Section        0  l6470.o(i.s_Step_2_FnSlpDec)
-    i.s_Step_2_StSlp                         0x08004874   Section        0  l6470.o(i.s_Step_2_StSlp)
-    i.stop_motor                             0x080048a4   Section        0  motordriver.o(i.stop_motor)
-    .constdata                               0x080048e8   Section      794  l6470.o(.constdata)
-    .constdata                               0x08004c02   Section       16  stm32f4xx_hal_rcc.o(.constdata)
-    .constdata                               0x08004c12   Section        5  stm32f4xx_nucleo.o(.constdata)
-    .constdata                               0x08004c18   Section      704  params.o(.constdata)
+    i.NUCLEO_Board_Init                      0x08003908   Section        0  xnucleoihm02a1_interface.o(i.NUCLEO_Board_Init)
+    i.NVIC_GetPriorityGrouping               0x08003930   Section        0  stm32f4xx_hal_cortex.o(i.NVIC_GetPriorityGrouping)
+    NVIC_GetPriorityGrouping                 0x08003931   Thumb Code    10  stm32f4xx_hal_cortex.o(i.NVIC_GetPriorityGrouping)
+    i.NVIC_SetPriority                       0x08003940   Section        0  stm32f4xx_hal_cortex.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x08003941   Thumb Code    32  stm32f4xx_hal_cortex.o(i.NVIC_SetPriority)
+    i.SPI_WaitOnFlagUntilTimeout             0x08003968   Section        0  stm32f4xx_hal_spi.o(i.SPI_WaitOnFlagUntilTimeout)
+    SPI_WaitOnFlagUntilTimeout               0x08003969   Thumb Code   276  stm32f4xx_hal_spi.o(i.SPI_WaitOnFlagUntilTimeout)
+    i.Step_s2_2_Acc                          0x08003a7c   Section        0  l6470.o(i.Step_s2_2_Acc)
+    i.Step_s2_2_Dec                          0x08003aac   Section        0  l6470.o(i.Step_s2_2_Dec)
+    i.Step_s_2_FsSpd                         0x08003adc   Section        0  l6470.o(i.Step_s_2_FsSpd)
+    i.Step_s_2_IntSpeed                      0x08003b30   Section        0  l6470.o(i.Step_s_2_IntSpeed)
+    i.Step_s_2_MaxSpeed                      0x08003b60   Section        0  l6470.o(i.Step_s_2_MaxSpeed)
+    i.Step_s_2_MinSpeed                      0x08003b90   Section        0  l6470.o(i.Step_s_2_MinSpeed)
+    i.SysTick_Handler                        0x08003bc0   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
+    i.SystemClock_Config                     0x08003bcc   Section        0  xnucleoihm02a1_interface.o(i.SystemClock_Config)
+    i.SystemInit                             0x08003c64   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.UART_EndTransmit_IT                    0x08003cc8   Section        0  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
+    UART_EndTransmit_IT                      0x08003cc9   Thumb Code    72  stm32f4xx_hal_uart.o(i.UART_EndTransmit_IT)
+    i.UART_Receive_IT                        0x08003d10   Section        0  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
+    UART_Receive_IT                          0x08003d11   Thumb Code   188  stm32f4xx_hal_uart.o(i.UART_Receive_IT)
+    i.UART_SetConfig                         0x08003dcc   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    UART_SetConfig                           0x08003dcd   Thumb Code   640  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    i.UART_Transmit_IT                       0x08004094   Section        0  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
+    UART_Transmit_IT                         0x08004095   Thumb Code   112  stm32f4xx_hal_uart.o(i.UART_Transmit_IT)
+    i.UART_WaitOnFlagUntilTimeout            0x08004104   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    UART_WaitOnFlagUntilTimeout              0x08004105   Thumb Code   250  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    i.USART2_IRQHandler                      0x08004200   Section        0  stm32f4xx_it.o(i.USART2_IRQHandler)
+    i.USART_ITCharManager                    0x08004214   Section        0  example_usart.o(i.USART_ITCharManager)
+    i.USART_PrintAllRegisterValues           0x08004290   Section        0  example_usart.o(i.USART_PrintAllRegisterValues)
+    i.USART_PrintRegisterValues              0x080042cc   Section        0  example_usart.o(i.USART_PrintRegisterValues)
+    i.USART_Transmit                         0x080043c0   Section        0  example_usart.o(i.USART_Transmit)
+    i.USART_TxWelcomeMessage                 0x080043e8   Section        0  example_usart.o(i.USART_TxWelcomeMessage)
+    i.User_LED_Blinking                      0x0800450c   Section        0  xnucleoihm02a1_interface.o(i.User_LED_Blinking)
+    i.__scatterload_copy                     0x0800453e   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800454c   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800454e   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.assert_failed                          0x0800455c   Section        0  main.o(i.assert_failed)
+    i.mA_2_OcdTh                             0x08004560   Section        0  l6470.o(i.mA_2_OcdTh)
+    i.mA_2_StallTh                           0x080045c4   Section        0  l6470.o(i.mA_2_StallTh)
+    i.main                                   0x08004628   Section        0  main.o(i.main)
+    i.num2hex                                0x08004704   Section        0  example_usart.o(i.num2hex)
+    i.run_motor                              0x08004778   Section        0  motordriver.o(i.run_motor)
+    i.s_Step_2_FnSlpAcc                      0x08004838   Section        0  l6470.o(i.s_Step_2_FnSlpAcc)
+    i.s_Step_2_FnSlpDec                      0x08004868   Section        0  l6470.o(i.s_Step_2_FnSlpDec)
+    i.s_Step_2_StSlp                         0x08004898   Section        0  l6470.o(i.s_Step_2_StSlp)
+    i.stop_motor                             0x080048c8   Section        0  motordriver.o(i.stop_motor)
+    .constdata                               0x0800490c   Section      794  l6470.o(.constdata)
+    .constdata                               0x08004c26   Section       16  stm32f4xx_hal_rcc.o(.constdata)
+    .constdata                               0x08004c36   Section        5  stm32f4xx_nucleo.o(.constdata)
+    .constdata                               0x08004c3c   Section      704  params.o(.constdata)
     .data                                    0x20000000   Section      173  l6470.o(.data)
     .data                                    0x200000b0   Section        4  stm32f4xx_hal.o(.data)
     uwTick                                   0x200000b0   Data           4  stm32f4xx_hal.o(.data)
@@ -1803,48 +1803,48 @@ Image Symbol Table
     MX_SPI1_Init                             0x080037f1   Thumb Code   134  xnucleoihm02a1_interface.o(i.MX_SPI1_Init)
     MX_SPI_Init                              0x08003885   Thumb Code     8  xnucleoihm02a1_interface.o(i.MX_SPI_Init)
     MX_USART2_Init                           0x0800388d   Thumb Code    40  xnucleoihm02a1_interface.o(i.MX_USART2_Init)
-    MotorLimitSwitchDemo                     0x080038bd   Thumb Code    40  main.o(i.MotorLimitSwitchDemo)
-    NUCLEO_Board_Init                        0x080038e5   Thumb Code    38  xnucleoihm02a1_interface.o(i.NUCLEO_Board_Init)
-    Step_s2_2_Acc                            0x08003a59   Thumb Code    38  l6470.o(i.Step_s2_2_Acc)
-    Step_s2_2_Dec                            0x08003a89   Thumb Code    38  l6470.o(i.Step_s2_2_Dec)
-    Step_s_2_FsSpd                           0x08003ab9   Thumb Code    72  l6470.o(i.Step_s_2_FsSpd)
-    Step_s_2_IntSpeed                        0x08003b0d   Thumb Code    38  l6470.o(i.Step_s_2_IntSpeed)
-    Step_s_2_MaxSpeed                        0x08003b3d   Thumb Code    38  l6470.o(i.Step_s_2_MaxSpeed)
-    Step_s_2_MinSpeed                        0x08003b6d   Thumb Code    38  l6470.o(i.Step_s_2_MinSpeed)
-    SysTick_Handler                          0x08003b9d   Thumb Code    12  stm32f4xx_it.o(i.SysTick_Handler)
-    SystemClock_Config                       0x08003ba9   Thumb Code   142  xnucleoihm02a1_interface.o(i.SystemClock_Config)
-    SystemInit                               0x08003c41   Thumb Code    82  system_stm32f4xx.o(i.SystemInit)
-    USART2_IRQHandler                        0x080041dd   Thumb Code    16  stm32f4xx_it.o(i.USART2_IRQHandler)
-    USART_ITCharManager                      0x080041f1   Thumb Code   120  example_usart.o(i.USART_ITCharManager)
-    USART_PrintAllRegisterValues             0x0800426d   Thumb Code    60  example_usart.o(i.USART_PrintAllRegisterValues)
-    USART_PrintRegisterValues                0x080042a9   Thumb Code   170  example_usart.o(i.USART_PrintRegisterValues)
-    USART_Transmit                           0x0800439d   Thumb Code    40  example_usart.o(i.USART_Transmit)
-    USART_TxWelcomeMessage                   0x080043c5   Thumb Code    76  example_usart.o(i.USART_TxWelcomeMessage)
-    User_LED_Blinking                        0x080044e9   Thumb Code    50  xnucleoihm02a1_interface.o(i.User_LED_Blinking)
-    __scatterload_copy                       0x0800451b   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08004529   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x0800452b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    assert_failed                            0x08004539   Thumb Code     2  main.o(i.assert_failed)
-    mA_2_OcdTh                               0x0800453d   Thumb Code    92  l6470.o(i.mA_2_OcdTh)
-    mA_2_StallTh                             0x080045a1   Thumb Code    92  l6470.o(i.mA_2_StallTh)
-    main                                     0x08004605   Thumb Code   122  main.o(i.main)
-    num2hex                                  0x080046e1   Thumb Code   112  example_usart.o(i.num2hex)
-    run_motor                                0x08004755   Thumb Code   128  motordriver.o(i.run_motor)
-    s_Step_2_FnSlpAcc                        0x08004815   Thumb Code    38  l6470.o(i.s_Step_2_FnSlpAcc)
-    s_Step_2_FnSlpDec                        0x08004845   Thumb Code    38  l6470.o(i.s_Step_2_FnSlpDec)
-    s_Step_2_StSlp                           0x08004875   Thumb Code    38  l6470.o(i.s_Step_2_StSlp)
-    stop_motor                               0x080048a5   Thumb Code    30  motordriver.o(i.stop_motor)
-    L6470_Register                           0x080048e8   Data         500  l6470.o(.constdata)
-    L6470_ApplicationCommand                 0x08004adc   Data         266  l6470.o(.constdata)
-    L6470_Direction                          0x08004be6   Data          18  l6470.o(.constdata)
-    L6470_ACT                                0x08004bf8   Data          10  l6470.o(.constdata)
-    APBAHBPrescTable                         0x08004c02   Data          16  stm32f4xx_hal_rcc.o(.constdata)
-    GPIO_PIN                                 0x08004c12   Data           2  stm32f4xx_nucleo.o(.constdata)
-    BUTTON_PIN                               0x08004c14   Data           2  stm32f4xx_nucleo.o(.constdata)
-    BUTTON_IRQn                              0x08004c16   Data           1  stm32f4xx_nucleo.o(.constdata)
-    MotorParameterInitData                   0x08004c18   Data         704  params.o(.constdata)
-    Region$$Table$$Base                      0x08004ed8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08004ef8   Number         0  anon$$obj.o(Region$$Table)
+    MotorLimitSwitchDemo                     0x080038bd   Thumb Code    76  main.o(i.MotorLimitSwitchDemo)
+    NUCLEO_Board_Init                        0x08003909   Thumb Code    38  xnucleoihm02a1_interface.o(i.NUCLEO_Board_Init)
+    Step_s2_2_Acc                            0x08003a7d   Thumb Code    38  l6470.o(i.Step_s2_2_Acc)
+    Step_s2_2_Dec                            0x08003aad   Thumb Code    38  l6470.o(i.Step_s2_2_Dec)
+    Step_s_2_FsSpd                           0x08003add   Thumb Code    72  l6470.o(i.Step_s_2_FsSpd)
+    Step_s_2_IntSpeed                        0x08003b31   Thumb Code    38  l6470.o(i.Step_s_2_IntSpeed)
+    Step_s_2_MaxSpeed                        0x08003b61   Thumb Code    38  l6470.o(i.Step_s_2_MaxSpeed)
+    Step_s_2_MinSpeed                        0x08003b91   Thumb Code    38  l6470.o(i.Step_s_2_MinSpeed)
+    SysTick_Handler                          0x08003bc1   Thumb Code    12  stm32f4xx_it.o(i.SysTick_Handler)
+    SystemClock_Config                       0x08003bcd   Thumb Code   142  xnucleoihm02a1_interface.o(i.SystemClock_Config)
+    SystemInit                               0x08003c65   Thumb Code    82  system_stm32f4xx.o(i.SystemInit)
+    USART2_IRQHandler                        0x08004201   Thumb Code    16  stm32f4xx_it.o(i.USART2_IRQHandler)
+    USART_ITCharManager                      0x08004215   Thumb Code   120  example_usart.o(i.USART_ITCharManager)
+    USART_PrintAllRegisterValues             0x08004291   Thumb Code    60  example_usart.o(i.USART_PrintAllRegisterValues)
+    USART_PrintRegisterValues                0x080042cd   Thumb Code   170  example_usart.o(i.USART_PrintRegisterValues)
+    USART_Transmit                           0x080043c1   Thumb Code    40  example_usart.o(i.USART_Transmit)
+    USART_TxWelcomeMessage                   0x080043e9   Thumb Code    76  example_usart.o(i.USART_TxWelcomeMessage)
+    User_LED_Blinking                        0x0800450d   Thumb Code    50  xnucleoihm02a1_interface.o(i.User_LED_Blinking)
+    __scatterload_copy                       0x0800453f   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800454d   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800454f   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    assert_failed                            0x0800455d   Thumb Code     2  main.o(i.assert_failed)
+    mA_2_OcdTh                               0x08004561   Thumb Code    92  l6470.o(i.mA_2_OcdTh)
+    mA_2_StallTh                             0x080045c5   Thumb Code    92  l6470.o(i.mA_2_StallTh)
+    main                                     0x08004629   Thumb Code   122  main.o(i.main)
+    num2hex                                  0x08004705   Thumb Code   112  example_usart.o(i.num2hex)
+    run_motor                                0x08004779   Thumb Code   128  motordriver.o(i.run_motor)
+    s_Step_2_FnSlpAcc                        0x08004839   Thumb Code    38  l6470.o(i.s_Step_2_FnSlpAcc)
+    s_Step_2_FnSlpDec                        0x08004869   Thumb Code    38  l6470.o(i.s_Step_2_FnSlpDec)
+    s_Step_2_StSlp                           0x08004899   Thumb Code    38  l6470.o(i.s_Step_2_StSlp)
+    stop_motor                               0x080048c9   Thumb Code    30  motordriver.o(i.stop_motor)
+    L6470_Register                           0x0800490c   Data         500  l6470.o(.constdata)
+    L6470_ApplicationCommand                 0x08004b00   Data         266  l6470.o(.constdata)
+    L6470_Direction                          0x08004c0a   Data          18  l6470.o(.constdata)
+    L6470_ACT                                0x08004c1c   Data          10  l6470.o(.constdata)
+    APBAHBPrescTable                         0x08004c26   Data          16  stm32f4xx_hal_rcc.o(.constdata)
+    GPIO_PIN                                 0x08004c36   Data           2  stm32f4xx_nucleo.o(.constdata)
+    BUTTON_PIN                               0x08004c38   Data           2  stm32f4xx_nucleo.o(.constdata)
+    BUTTON_IRQn                              0x08004c3a   Data           1  stm32f4xx_nucleo.o(.constdata)
+    MotorParameterInitData                   0x08004c3c   Data         704  params.o(.constdata)
+    Region$$Table$$Base                      0x08004efc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08004f1c   Number         0  anon$$obj.o(Region$$Table)
     L6470Command                             0x20000000   Data         148  l6470.o(.data)
     L6470_DaisyChainSpiTxStruct              0x20000094   Data           8  l6470.o(.data)
     L6470_DaisyChainSpiRxStruct              0x2000009c   Data           8  l6470.o(.data)
@@ -1895,9 +1895,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000195
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000052a0, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00005040])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000052c4, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00005064])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004ef8, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004f1c, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2061,57 +2061,57 @@ Memory Map of the image
     0x080037f0   0x080037f0   0x00000094   Code   RO         2881    i.MX_SPI1_Init      xnucleoihm02a1_interface.o
     0x08003884   0x08003884   0x00000008   Code   RO         2883    i.MX_SPI_Init       xnucleoihm02a1_interface.o
     0x0800388c   0x0800388c   0x00000030   Code   RO         2884    i.MX_USART2_Init    xnucleoihm02a1_interface.o
-    0x080038bc   0x080038bc   0x00000028   Code   RO         3247    i.MotorLimitSwitchDemo  main.o
-    0x080038e4   0x080038e4   0x00000026   Code   RO         2885    i.NUCLEO_Board_Init  xnucleoihm02a1_interface.o
-    0x0800390a   0x0800390a   0x00000002   PAD
-    0x0800390c   0x0800390c   0x00000010   Code   RO          943    i.NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x0800391c   0x0800391c   0x00000028   Code   RO          944    i.NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08003944   0x08003944   0x00000114   Code   RO         1413    i.SPI_WaitOnFlagUntilTimeout  stm32f4xx_hal_spi.o
-    0x08003a58   0x08003a58   0x00000030   Code   RO           65    i.Step_s2_2_Acc     l6470.o
-    0x08003a88   0x08003a88   0x00000030   Code   RO           66    i.Step_s2_2_Dec     l6470.o
-    0x08003ab8   0x08003ab8   0x00000054   Code   RO           67    i.Step_s_2_FsSpd    l6470.o
-    0x08003b0c   0x08003b0c   0x00000030   Code   RO           68    i.Step_s_2_IntSpeed  l6470.o
-    0x08003b3c   0x08003b3c   0x00000030   Code   RO           69    i.Step_s_2_MaxSpeed  l6470.o
-    0x08003b6c   0x08003b6c   0x00000030   Code   RO           70    i.Step_s_2_MinSpeed  l6470.o
-    0x08003b9c   0x08003b9c   0x0000000c   Code   RO         3022    i.SysTick_Handler   stm32f4xx_it.o
-    0x08003ba8   0x08003ba8   0x00000098   Code   RO         2886    i.SystemClock_Config  xnucleoihm02a1_interface.o
-    0x08003c40   0x08003c40   0x00000064   Code   RO         3359    i.SystemInit        system_stm32f4xx.o
-    0x08003ca4   0x08003ca4   0x00000048   Code   RO         1772    i.UART_EndTransmit_IT  stm32f4xx_hal_uart.o
-    0x08003cec   0x08003cec   0x000000bc   Code   RO         1773    i.UART_Receive_IT   stm32f4xx_hal_uart.o
-    0x08003da8   0x08003da8   0x000002c8   Code   RO         1774    i.UART_SetConfig    stm32f4xx_hal_uart.o
-    0x08004070   0x08004070   0x00000070   Code   RO         1775    i.UART_Transmit_IT  stm32f4xx_hal_uart.o
-    0x080040e0   0x080040e0   0x000000fa   Code   RO         1776    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
-    0x080041da   0x080041da   0x00000002   PAD
-    0x080041dc   0x080041dc   0x00000014   Code   RO         3023    i.USART2_IRQHandler  stm32f4xx_it.o
-    0x080041f0   0x080041f0   0x0000007c   Code   RO         3085    i.USART_ITCharManager  example_usart.o
-    0x0800426c   0x0800426c   0x0000003c   Code   RO         3086    i.USART_PrintAllRegisterValues  example_usart.o
-    0x080042a8   0x080042a8   0x000000f4   Code   RO         3087    i.USART_PrintRegisterValues  example_usart.o
-    0x0800439c   0x0800439c   0x00000028   Code   RO         3089    i.USART_Transmit    example_usart.o
-    0x080043c4   0x080043c4   0x00000124   Code   RO         3090    i.USART_TxWelcomeMessage  example_usart.o
-    0x080044e8   0x080044e8   0x00000032   Code   RO         2887    i.User_LED_Blinking  xnucleoihm02a1_interface.o
-    0x0800451a   0x0800451a   0x0000000e   Code   RO         3443    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08004528   0x08004528   0x00000002   Code   RO         3444    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0800452a   0x0800452a   0x0000000e   Code   RO         3445    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08004538   0x08004538   0x00000002   Code   RO         3249    i.assert_failed     main.o
-    0x0800453a   0x0800453a   0x00000002   PAD
-    0x0800453c   0x0800453c   0x00000064   Code   RO           72    i.mA_2_OcdTh        l6470.o
-    0x080045a0   0x080045a0   0x00000064   Code   RO           73    i.mA_2_StallTh      l6470.o
-    0x08004604   0x08004604   0x000000dc   Code   RO         3250    i.main              main.o
-    0x080046e0   0x080046e0   0x00000074   Code   RO         3091    i.num2hex           example_usart.o
-    0x08004754   0x08004754   0x000000c0   Code   RO         3305    i.run_motor         motordriver.o
-    0x08004814   0x08004814   0x00000030   Code   RO           74    i.s_Step_2_FnSlpAcc  l6470.o
-    0x08004844   0x08004844   0x00000030   Code   RO           75    i.s_Step_2_FnSlpDec  l6470.o
-    0x08004874   0x08004874   0x00000030   Code   RO           76    i.s_Step_2_StSlp    l6470.o
-    0x080048a4   0x080048a4   0x00000044   Code   RO         3306    i.stop_motor        motordriver.o
-    0x080048e8   0x080048e8   0x0000031a   Data   RO           78    .constdata          l6470.o
-    0x08004c02   0x08004c02   0x00000010   Data   RO          585    .constdata          stm32f4xx_hal_rcc.o
-    0x08004c12   0x08004c12   0x00000005   Data   RO         2438    .constdata          stm32f4xx_nucleo.o
-    0x08004c17   0x08004c17   0x00000001   PAD
-    0x08004c18   0x08004c18   0x000002c0   Data   RO         3341    .constdata          params.o
-    0x08004ed8   0x08004ed8   0x00000020   Data   RO         3441    Region$$Table       anon$$obj.o
+    0x080038bc   0x080038bc   0x0000004c   Code   RO         3247    i.MotorLimitSwitchDemo  main.o
+    0x08003908   0x08003908   0x00000026   Code   RO         2885    i.NUCLEO_Board_Init  xnucleoihm02a1_interface.o
+    0x0800392e   0x0800392e   0x00000002   PAD
+    0x08003930   0x08003930   0x00000010   Code   RO          943    i.NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x08003940   0x08003940   0x00000028   Code   RO          944    i.NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x08003968   0x08003968   0x00000114   Code   RO         1413    i.SPI_WaitOnFlagUntilTimeout  stm32f4xx_hal_spi.o
+    0x08003a7c   0x08003a7c   0x00000030   Code   RO           65    i.Step_s2_2_Acc     l6470.o
+    0x08003aac   0x08003aac   0x00000030   Code   RO           66    i.Step_s2_2_Dec     l6470.o
+    0x08003adc   0x08003adc   0x00000054   Code   RO           67    i.Step_s_2_FsSpd    l6470.o
+    0x08003b30   0x08003b30   0x00000030   Code   RO           68    i.Step_s_2_IntSpeed  l6470.o
+    0x08003b60   0x08003b60   0x00000030   Code   RO           69    i.Step_s_2_MaxSpeed  l6470.o
+    0x08003b90   0x08003b90   0x00000030   Code   RO           70    i.Step_s_2_MinSpeed  l6470.o
+    0x08003bc0   0x08003bc0   0x0000000c   Code   RO         3022    i.SysTick_Handler   stm32f4xx_it.o
+    0x08003bcc   0x08003bcc   0x00000098   Code   RO         2886    i.SystemClock_Config  xnucleoihm02a1_interface.o
+    0x08003c64   0x08003c64   0x00000064   Code   RO         3359    i.SystemInit        system_stm32f4xx.o
+    0x08003cc8   0x08003cc8   0x00000048   Code   RO         1772    i.UART_EndTransmit_IT  stm32f4xx_hal_uart.o
+    0x08003d10   0x08003d10   0x000000bc   Code   RO         1773    i.UART_Receive_IT   stm32f4xx_hal_uart.o
+    0x08003dcc   0x08003dcc   0x000002c8   Code   RO         1774    i.UART_SetConfig    stm32f4xx_hal_uart.o
+    0x08004094   0x08004094   0x00000070   Code   RO         1775    i.UART_Transmit_IT  stm32f4xx_hal_uart.o
+    0x08004104   0x08004104   0x000000fa   Code   RO         1776    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
+    0x080041fe   0x080041fe   0x00000002   PAD
+    0x08004200   0x08004200   0x00000014   Code   RO         3023    i.USART2_IRQHandler  stm32f4xx_it.o
+    0x08004214   0x08004214   0x0000007c   Code   RO         3085    i.USART_ITCharManager  example_usart.o
+    0x08004290   0x08004290   0x0000003c   Code   RO         3086    i.USART_PrintAllRegisterValues  example_usart.o
+    0x080042cc   0x080042cc   0x000000f4   Code   RO         3087    i.USART_PrintRegisterValues  example_usart.o
+    0x080043c0   0x080043c0   0x00000028   Code   RO         3089    i.USART_Transmit    example_usart.o
+    0x080043e8   0x080043e8   0x00000124   Code   RO         3090    i.USART_TxWelcomeMessage  example_usart.o
+    0x0800450c   0x0800450c   0x00000032   Code   RO         2887    i.User_LED_Blinking  xnucleoihm02a1_interface.o
+    0x0800453e   0x0800453e   0x0000000e   Code   RO         3443    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800454c   0x0800454c   0x00000002   Code   RO         3444    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800454e   0x0800454e   0x0000000e   Code   RO         3445    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800455c   0x0800455c   0x00000002   Code   RO         3249    i.assert_failed     main.o
+    0x0800455e   0x0800455e   0x00000002   PAD
+    0x08004560   0x08004560   0x00000064   Code   RO           72    i.mA_2_OcdTh        l6470.o
+    0x080045c4   0x080045c4   0x00000064   Code   RO           73    i.mA_2_StallTh      l6470.o
+    0x08004628   0x08004628   0x000000dc   Code   RO         3250    i.main              main.o
+    0x08004704   0x08004704   0x00000074   Code   RO         3091    i.num2hex           example_usart.o
+    0x08004778   0x08004778   0x000000c0   Code   RO         3305    i.run_motor         motordriver.o
+    0x08004838   0x08004838   0x00000030   Code   RO           74    i.s_Step_2_FnSlpAcc  l6470.o
+    0x08004868   0x08004868   0x00000030   Code   RO           75    i.s_Step_2_FnSlpDec  l6470.o
+    0x08004898   0x08004898   0x00000030   Code   RO           76    i.s_Step_2_StSlp    l6470.o
+    0x080048c8   0x080048c8   0x00000044   Code   RO         3306    i.stop_motor        motordriver.o
+    0x0800490c   0x0800490c   0x0000031a   Data   RO           78    .constdata          l6470.o
+    0x08004c26   0x08004c26   0x00000010   Data   RO          585    .constdata          stm32f4xx_hal_rcc.o
+    0x08004c36   0x08004c36   0x00000005   Data   RO         2438    .constdata          stm32f4xx_nucleo.o
+    0x08004c3b   0x08004c3b   0x00000001   PAD
+    0x08004c3c   0x08004c3c   0x000002c0   Data   RO         3341    .constdata          params.o
+    0x08004efc   0x08004efc   0x00000020   Data   RO         3441    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004ef8, Size: 0x000009d0, Max: 0x00018000, ABSOLUTE, COMPRESSED[0x00000148])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004f1c, Size: 0x000009d0, Max: 0x00018000, ABSOLUTE, COMPRESSED[0x00000148])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2139,7 +2139,7 @@ Image component sizes
 
        876        298          0          0        259       6323   example_usart.o
       4094        524        794        173         32     283279   l6470.o
-       318        116          0          0          0       3067   main.o
+       354        116          0          0          0       3083   main.o
        464        188          0         32          0       3091   motordriver.o
          8          4        704          0          0       1269   params.o
         36          8        404          0       1024        924   startup_stm32f401xe.o
@@ -2158,7 +2158,7 @@ Image component sizes
        522         40          0          0        244       7013   xnucleoihm02a1_interface.o
 
     ----------------------------------------------------------------------
-     17998       2472       1956        936       1576     415197   Object Totals
+     18034       2472       1956        936       1576     415213   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         18          0          1          3          5          0   (incl. Padding)
 
@@ -2202,15 +2202,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     18260       2488       1956        936       1576     399033   Grand Totals
-     18260       2488       1956        328       1576     399033   ELF Image Totals (compressed)
-     18260       2488       1956        328          0          0   ROM Totals
+     18296       2488       1956        936       1576     399049   Grand Totals
+     18296       2488       1956        328       1576     399049   ELF Image Totals (compressed)
+     18296       2488       1956        328          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                20216 (  19.74kB)
+    Total RO  Size (Code + RO Data)                20252 (  19.78kB)
     Total RW  Size (RW Data + ZI Data)              2512 (   2.45kB)
-    Total ROM Size (Code + RO Data + RW Data)      20544 (  20.06kB)
+    Total ROM Size (Code + RO Data + RW Data)      20580 (  20.10kB)
 
 ==============================================================================
 

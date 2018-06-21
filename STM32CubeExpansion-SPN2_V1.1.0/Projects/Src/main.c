@@ -92,9 +92,13 @@ uint16_t Read_ADC(void);
 
 // Run motor FWD and Backwards for 5 secs each in a loop
 void	MotorLimitSwitchDemo(void){
-	run_motor(FWD, 20000);
+	run_motor(FWD, 5000);
 	HAL_Delay(5000);
-	run_motor(REV, 20000);
+	run_motor(FWD, 5000);
+	HAL_Delay(5000);
+	run_motor(REV, 5000);
+	HAL_Delay(5000);
+	run_motor(REV, 5000);
 	HAL_Delay(5000);
 }
 
