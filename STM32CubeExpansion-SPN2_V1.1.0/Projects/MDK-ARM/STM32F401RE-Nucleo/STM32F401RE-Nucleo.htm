@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\STM32F401RE-Nucleo\STM32F401RE-Nucleo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\STM32F401RE-Nucleo\STM32F401RE-Nucleo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Jul 05 16:13:34 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Jul 05 16:26:27 2018
 <BR><P>
 <H3>Maximum Stack Usage =        192 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -847,10 +847,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;User_LED_Blinking
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MotorLimitSwitchDemo
 </UL>
 
-<P><STRONG><a name="[a5]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, main.o(i.HAL_GPIO_EXTI_Callback))
+<P><STRONG><a name="[a5]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, main.o(i.HAL_GPIO_EXTI_Callback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_GPIO_EXTI_Callback &rArr; stop_motor &rArr; USART_Transmit &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transmit
@@ -1684,11 +1683,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NUCLEO_Board_Init
 </UL>
 
-<P><STRONG><a name="[df]"></a>MotorLimitSwitchDemo</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, main.o(i.MotorLimitSwitchDemo))
+<P><STRONG><a name="[df]"></a>MotorLimitSwitchDemo</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.MotorLimitSwitchDemo))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = MotorLimitSwitchDemo &rArr; run_motor &rArr; USART_Transmit &rArr; HAL_UART_Transmit &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_motor
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;run_motor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>

@@ -83,6 +83,7 @@
 
 /* Variable used to get converted value */
 __IO uint16_t uhADCxConvertedValue = 0;
+uint16_t pressed_LS;
 
 
 /* Private function prototypes -----------------------------------------------*/
@@ -90,34 +91,22 @@ __IO uint16_t uhADCxConvertedValue = 0;
 static void Error_Handler(void);
 uint16_t Read_ADC(void);
 
-// Run motor FWD and Backwards for 5 secs each in a loop
 void	MotorLimitSwitchDemo(void){
-	run_motor(FWD, 5000);
-	HAL_Delay(5000);
-	run_motor(FWD, 5000);
-	HAL_Delay(5000);
-	run_motor(REV, 5000);
-	HAL_Delay(5000);
-	run_motor(REV, 5000);
-	HAL_Delay(5000);
+	if (pressed_LS == GPIO_PIN_8)
+	{
+		run_motor(FWD, 5000);
+	}
+	if (pressed_LS == GPIO_PIN_6)
+	{
+		run_motor(REV, 5000);
+	}
 }
-
-
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	USART_Transmit(&huart2, "INTERUPT");
-	
-  switch (GPIO_Pin)
-  {
-		case GPIO_PIN_8:
-			stop_motor();
-			break;
-		
-		case GPIO_PIN_6:
-			stop_motor();
-			break;	
-	}
+	USART_Transmit(&huart2, "INTERUPT: ");
+	pressed_LS = GPIO_Pin;
+	stop_motor();
 }
 
 /**

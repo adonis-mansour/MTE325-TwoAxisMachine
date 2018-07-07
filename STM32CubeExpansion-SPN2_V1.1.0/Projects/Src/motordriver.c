@@ -61,6 +61,7 @@ void InitializeMotors(void)
 //  }
 
 }
+
 void stop_motor(void)
 {
 	USART_Transmit(&huart2, "Stopping Motor\n\r");
