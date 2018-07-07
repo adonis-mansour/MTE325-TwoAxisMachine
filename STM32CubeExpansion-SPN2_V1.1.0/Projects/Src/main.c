@@ -64,8 +64,8 @@
   * @{
   */
 
-#define MICROSTEPPING_MOTOR_EXAMPLE        //!< Uncomment to performe the standalone example
-//#define MICROSTEPPING_MOTOR_USART_EXAMPLE  //!< Uncomment to performe the USART example
+#define MICROSTEPPING_MOTOR_EXAMPLE        //!< Uncomment to perform the standalone example
+//#define MICROSTEPPING_MOTOR_USART_EXAMPLE  //!< Uncomment to perform the USART example
 #if ((defined (MICROSTEPPING_MOTOR_EXAMPLE)) && (defined (MICROSTEPPING_MOTOR_USART_EXAMPLE)))
   #error "Please select an option only!"
 #elif ((!defined (MICROSTEPPING_MOTOR_EXAMPLE)) && (!defined (MICROSTEPPING_MOTOR_USART_EXAMPLE)))
@@ -83,6 +83,8 @@
 
 /* Variable used to get converted value */
 __IO uint16_t uhADCxConvertedValue = 0;
+
+// Saves the previously triggered limit switch
 uint16_t pressed_LS;
 
 
@@ -114,8 +116,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   */
 int main(void)
 {
-	int var = 0; 
-
   /* NUCLEO board initialization */
 	/* Init for UART, ADC, GPIO and SPI */
   NUCLEO_Board_Init();
@@ -160,8 +160,6 @@ int main(void)
 	#ifdef NUCLEO_USE_USART
   /* Transmit the initial message to the PC via UART */
   USART_TxWelcomeMessage();
-	USART_Transmit(&huart2, "test\n\r");
-	char output;
 	
 	USART_Transmit(&huart2, "Running Demo...\n\r");
 
