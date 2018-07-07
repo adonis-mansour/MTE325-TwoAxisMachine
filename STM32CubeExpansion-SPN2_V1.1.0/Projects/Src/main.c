@@ -129,33 +129,32 @@ int main(void)
 	
 	USART_Transmit(&huart2, "GPIO Initialization...\n\r");
 	GPIO_InitTypeDef GPIO_InitStruct;
-	// PB_ signal gen input
 	
-//    GPIO_InitStruct.Pin = GPIO_PIN_5;
-//    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-//    GPIO_InitStruct.Pull = GPIO_PULLUP;
-//    GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
-//    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-	
-	    /* Configure Button pin as input with External interrupt */
-    GPIO_InitStruct.Pin = GPIO_PIN_8;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING; 
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-		
-		GPIO_InitStruct.Pin = GPIO_PIN_6;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING; 
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    
-    /* Enable and set Button EXTI Interrupt to the lowest priority */
-    HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0x0F, 0x00);
-    HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-		EXTI9_5_IRQHandler();
+	/* Configure Button pin as input with External interrupt */
+	GPIO_InitStruct.Pin = GPIO_PIN_8;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING; 
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+	GPIO_InitStruct.Pin = GPIO_PIN_6;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING; 
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+	/* Enable and set Button EXTI Interrupt to the lowest priority */
+	HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0x0F, 0x00);
+	HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+	EXTI9_5_IRQHandler();
+	
+	// Setting ADC pin
+	GPIO_InitStruct.Pin = GPIO_PIN_6;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG; 
+	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+	
 		
 		
-		//=========================
+	//=========================
 		
 	#ifdef NUCLEO_USE_USART
   /* Transmit the initial message to the PC via UART */
@@ -164,7 +163,15 @@ int main(void)
 	USART_Transmit(&huart2, "Running Demo...\n\r");
 
 	while (1){
-		MotorLimitSwitchDemo();
+		uint8_t* adcValue;
+		USART_Transmit(&huart2, "adc1...\n\r");
+		num2str(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_6), adcValue);
+		USART_Transmit(&huart2, "adc2...\n\r");
+		USART_Transmit(&huart2, adcValue);
+		USART_Transmit(&huart2, "adc3...\n\r");
+
+		//MotorLimitSwitchDemo();
+		
 //		if (HAL_GPIO_ReadPin( GPIOB, GPIO_PIN_5) == GPIO_PIN_SET)
 //		{
 //			//USART_Transmit(&huart2, "yes\n\r");

@@ -399,27 +399,24 @@ void MX_ADC1_Init(void)
   /* GPIO Ports Clock Enable */
   __GPIOB_CLK_ENABLE();
 
-    /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
-    */
-	/*
+  /* Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) */
   hadc1.Instance = ADC1;
-  hadc1.Init.ClockPrescaler = ;
-  hadc1.Init.Resolution = ;
-  hadc1.Init.ScanConvMode = ;
-  hadc1.Init.ContinuousConvMode = ;
-  hadc1.Init.DiscontinuousConvMode = ;
-  hadc1.Init.ExternalTrigConvEdge = ;
-  hadc1.Init.DataAlign = ;
-  hadc1.Init.NbrOfConversion = ;
-  hadc1.Init.DMAContinuousRequests = ;
-  hadc1.Init.EOCSelection = ;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV8;  // Picked for the slowest
+  hadc1.Init.Resolution = ADC_RESOLUTION_8B;  // 8-bit resolution
+  hadc1.Init.ScanConvMode = DISABLE;  // Not doing bonus for now
+  hadc1.Init.ContinuousConvMode = DISABLE;  // Convert single mode
+  hadc1.Init.DiscontinuousConvMode = ENABLE;  // Discontinuous conversion
+  hadc1.Init.ExternalTrigConvEdge = ADC_SOFTWARE_START;  // Software start
+  hadc1.Init.DataAlign = ADC_DATAALIGN_LEFT;  // Big endian?
+  hadc1.Init.NbrOfConversion = 1;  // Single Conversion per sequence
+  hadc1.Init.DMAContinuousRequests = DISABLE;  // Single mode Requests
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;  // EOC at end of single conversion
   HAL_ADC_Init(&hadc1);
-*/
-    /**Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. 
-    */
+	
+  /* Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. */
   sConfig.Channel = ADC_CHANNEL_8;		/* Currently set to input pin PB0, adjust as needed */
   sConfig.Rank = 1;
-//  sConfig.SamplingTime = ;
+	sConfig.SamplingTime = ADC_SAMPLETIME_144CYCLES;  // Arbitrary sampling time
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 
 }
