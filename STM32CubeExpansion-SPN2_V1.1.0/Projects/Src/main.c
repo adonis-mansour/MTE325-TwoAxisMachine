@@ -31,6 +31,8 @@
   *
   ******************************************************************************
   */
+#include <stdio.h>
+
 #include "xnucleoihm02a1.h"
 #include "example.h"
 #include "example_usart.h"
@@ -85,7 +87,7 @@
 __IO uint16_t uhADCxConvertedValue = 0;
 
 // Saves the previously triggered limit switch
-uint16_t pressed_LS;
+uint16_t pressed_LS = 0;
 
 
 /* Private function prototypes -----------------------------------------------*/
@@ -98,7 +100,7 @@ void	MotorLimitSwitchDemo(void){
 	{
 		run_motor(FWD, 5000);
 	}
-	if (pressed_LS == GPIO_PIN_6)
+	else if (pressed_LS == GPIO_PIN_6)
 	{
 		run_motor(REV, 5000);
 	}
@@ -162,13 +164,12 @@ int main(void)
 	
 	USART_Transmit(&huart2, "Running Demo...\n\r");
 
-	while (1){
-		uint8_t* adcValue;
-		USART_Transmit(&huart2, "adc1...\n\r");
-		num2str(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_6), adcValue);
-		USART_Transmit(&huart2, "adc2...\n\r");
-		USART_Transmit(&huart2, adcValue);
-		USART_Transmit(&huart2, "adc3...\n\r");
+	while (1){		
+		uint16_t adcValue;
+		adcValue = Read_ADC();
+		USART_Transmit(&huart2, " ADC Read: ");
+	  USART_Transmit(&huart2, num2hex(adcValue, DOUBLEWORD_F));
+	  USART_Transmit(&huart2, " \n\r");
 
 		//MotorLimitSwitchDemo();
 		
