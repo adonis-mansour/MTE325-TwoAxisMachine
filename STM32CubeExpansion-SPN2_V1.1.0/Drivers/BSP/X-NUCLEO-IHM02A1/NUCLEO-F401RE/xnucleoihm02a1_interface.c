@@ -414,11 +414,10 @@ void MX_ADC1_Init(void)
   HAL_ADC_Init(&hadc1);
 	
   /* Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time. */
-  sConfig.Channel = ADC_CHANNEL_6;		/* Currently set to input pin PB0, adjust as needed */
+  sConfig.Channel = ADC_CHANNEL_6;		/* Currently set to input pin PA6, adjust as needed */
   sConfig.Rank = 1;
 	sConfig.SamplingTime = ADC_SAMPLETIME_144CYCLES;  // Arbitrary sampling time
   HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-
 }
 
 /**

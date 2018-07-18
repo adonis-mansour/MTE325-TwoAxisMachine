@@ -11,6 +11,9 @@
  uint8_t i;
  uint8_t board, device;
  uint8_t id;
+ 
+uint16_t LSFWD = GPIO_PIN_8;
+uint16_t LSREV = GPIO_PIN_6;
   
  StepperMotorBoardHandle_t *StepperMotorBoardHandle;
  MotorParameterData_t *MotorParameterDataGlobal, *MotorParameterDataSingle;

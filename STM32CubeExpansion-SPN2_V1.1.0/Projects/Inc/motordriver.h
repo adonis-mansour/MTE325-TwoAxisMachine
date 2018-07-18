@@ -15,9 +15,6 @@
 #define FWD ((uint8_t)1)
 #define REV ((uint8_t)0)
 
-uint16_t LSFWD = GPIO_PIN_8;
-uint16_t LSREV = GPIO_PIN_6;
-
 void InitializeMotors(void);
 int32_t adc_to_speed(uint16_t adcValue);
 void speed_to_motor(int32_t speed);
