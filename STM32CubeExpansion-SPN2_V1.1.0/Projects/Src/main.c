@@ -96,19 +96,28 @@ static void Error_Handler(void);
 uint16_t Read_ADC(void);
 
 void	MotorLimitSwitchDemo(void){
-	if (pressed_LS == GPIO_PIN_8)
+	if (pressed_LS == LSREV)
 	{
 		run_motor(FWD, 5000);
 	}
-	else if (pressed_LS == GPIO_PIN_6)
+	else if (pressed_LS == LSFWD)
 	{
 		run_motor(REV, 5000);
 	}
 }
 
+void	adcDemo(void){
+	// ADC Code
+	uint16_t adcValue;
+	int32_t speed;
+	adcValue = Read_ADC();
+	speed = adc_to_speed(adcValue);
+	speed_to_motor(speed);
+}
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	USART_Transmit(&huart2, "INTERUPT: ");
+	USART_Transmit(&huart2, "INTERUPT: \n\r");
 	pressed_LS = GPIO_Pin;
 	stop_motor();
 }
@@ -166,24 +175,15 @@ int main(void)
 
 	while (1){		
 		uint16_t adcValue;
+		int32_t speed;
 		adcValue = Read_ADC();
-		USART_Transmit(&huart2, " ADC Read: ");
-	  USART_Transmit(&huart2, num2hex(adcValue, DOUBLEWORD_F));
+		speed = adc_to_speed(adcValue);
+		USART_Transmit(&huart2, "Speed: ");
+	  USART_Transmit(&huart2, num2hex(speed, DOUBLEWORD_F));
 	  USART_Transmit(&huart2, " \n\r");
 
 		//MotorLimitSwitchDemo();
-		
-//		if (HAL_GPIO_ReadPin( GPIOB, GPIO_PIN_5) == GPIO_PIN_SET)
-//		{
-//			//USART_Transmit(&huart2, "yes\n\r");
-//			HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_SET);
-//		}
-//		else 
-//		{
-//			//USART_Transmit(&huart2, "no\n\r");
-//						HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_RESET);
-
-//		}
+		//adcDemo();
 	}
 		//USART_Transmit(&huart2, output);
 	

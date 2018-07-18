@@ -11,13 +11,6 @@
  uint8_t i;
  uint8_t board, device;
  uint8_t id;
- 
- uint16_t LSFWD = GPIO_PIN_8;
- uint16_t LSREV = GPIO_PIN_6;
- 
-
-// #define LSLS
-// #define LSRS
   
  StepperMotorBoardHandle_t *StepperMotorBoardHandle;
  MotorParameterData_t *MotorParameterDataGlobal, *MotorParameterDataSingle;
@@ -60,6 +53,31 @@ void InitializeMotors(void)
 //    StepperMotorBoardHandle->Command->PerformPreparedApplicationCommand();
 //  }
 
+}
+
+int32_t adc_to_speed(uint16_t adcValue)
+{
+    if (adcValue < 132 && adcValue > 107)
+    {
+        return 0;
+    }
+    
+	int32_t speed = 0;
+	speed = 0.0131*adcValue*adcValue*adcValue - 4.9442*adcValue*adcValue + 621.66*adcValue - 26000;
+	return speed;
+}
+
+void speed_to_motor(int32_t speed)
+{
+	if (speed < 0)
+	{
+		run_motor(FWD, speed);
+	}
+	
+	else
+	{
+		run_motor(REV, (speed*-1));
+	}
 }
 
 void stop_motor(void)
