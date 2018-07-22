@@ -1,3 +1,9 @@
+/**
+
+This file contains functions to control the motor.
+
+**/
+
 #include "stdint.h"
 #include "example.h"
 #include "example_usart.h"
@@ -5,22 +11,22 @@
 #include "xnucleoihm02a1.h"
 #include "motordriver.h"
 
- uint32_t Step;
- uint32_t Speed;
- uint8_t MovementPerRevolution;
- uint8_t i;
- uint8_t board, device;
- uint8_t id;
- 
+uint32_t Step;
+uint32_t Speed;
+uint8_t MovementPerRevolution;
+uint8_t i;
+uint8_t board, device;
+uint8_t id;
+
+// Defining the forward and reverse limit switches
 uint16_t LSFWD = GPIO_PIN_8;
 uint16_t LSREV = GPIO_PIN_6;
   
- StepperMotorBoardHandle_t *StepperMotorBoardHandle;
- MotorParameterData_t *MotorParameterDataGlobal, *MotorParameterDataSingle;
+StepperMotorBoardHandle_t *StepperMotorBoardHandle;
+MotorParameterData_t *MotorParameterDataGlobal, *MotorParameterDataSingle;
 
 void InitializeMotors(void)
 { 
-	
   #ifdef NUCLEO_USE_USART
   USART_Transmit(&huart2, "Initial values for registers:\n\r");
   USART_PrintAllRegisterValues();
@@ -43,21 +49,9 @@ void InitializeMotors(void)
   USART_Transmit(&huart2, "Custom values for registers:\n\r");
   USART_PrintAllRegisterValues();
   #endif
-
-//  for (board = EXPBRD_ID(0); board <= EXPBRD_ID(EXPBRD_MOUNTED_NR-1); board++)
-//  {
-//    
-//    for (device = L6470_ID(0); device <= L6470_ID(L6470DAISYCHAINSIZE-1); device++)
-//    {
-//      /* Prepare the stepper driver to be ready to perform a command */
-//      StepperMotorBoardHandle->StepperMotorDriverHandle[device]->Command->PrepareHardHiZ(device);
-//    }
-//    
-//    StepperMotorBoardHandle->Command->PerformPreparedApplicationCommand();
-//  }
-
 }
 
+// Convert ADC value to a motor speed value
 int32_t adc_to_speed(uint16_t adcValue)
 {
     if (adcValue < 132 && adcValue > 107)
@@ -70,6 +64,7 @@ int32_t adc_to_speed(uint16_t adcValue)
 	return speed;
 }
 
+// Control the motor given a speed (either positive or negative) without specifying direction
 void speed_to_motor(int32_t speed)
 {
 	if (speed < 0)
@@ -83,12 +78,14 @@ void speed_to_motor(int32_t speed)
 	}
 }
 
+// Stop the motor
 void stop_motor(void)
 {
 	USART_Transmit(&huart2, "Stopping Motor\n\r");
 	StepperMotorBoardHandle->Command->SoftStop(board, device);
 }
 
+// Run the motor given a direction (FWD, REV) and a speed value
 void run_motor(uint8_t direction, uint32_t speed)
 {
 	USART_Transmit(&huart2, "Running Motor.\n\r");

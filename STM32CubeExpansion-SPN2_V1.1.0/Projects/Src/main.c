@@ -94,8 +94,8 @@ uint16_t pressed_LS = 0;
 //static void SystemClock_Config(void);
 static void Error_Handler(void);
 uint16_t Read_ADC(void);
-uint16_t Read_ADC2(void);
 
+// Demonstration of the Limit Switch and Motor Characterization
 void	MotorLimitSwitchDemo(void){
 	int speed = 10000;
 	if (pressed_LS == GPIO_PIN_6)
@@ -108,8 +108,8 @@ void	MotorLimitSwitchDemo(void){
 	}
 }
 
+// Demonstration of the ADC
 void	adcDemo(void){
-	// ADC Code
 	uint16_t adcValue;
 	int32_t speed;
 	adcValue = Read_ADC();
@@ -117,6 +117,7 @@ void	adcDemo(void){
 	speed_to_motor(speed);
 }
 
+// Interrupt execution
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	USART_Transmit(&huart2, "INTERUPT: \n\r");
@@ -178,21 +179,12 @@ int main(void)
 	
 	USART_Transmit(&huart2, "Running Demo...\n\r");
 
-	while (1){		
-//		uint16_t adcValue;
-//		int32_t speed;
-//		
-//		adcValue = Read_ADC();
-//		speed = adc_to_speed(adcValue);
-//		
-//		USART_Transmit(&huart2, "Speed: ");
-//	  USART_Transmit(&huart2, num2hex(speed, DOUBLEWORD_F));
-//	  USART_Transmit(&huart2, " \n\r");
-
+	while (1)
+	{
+		// Choose to either run the Limit switch demo, or the ADC demo in this loop.
 		MotorLimitSwitchDemo();
 		//adcDemo();
 	}
-		//USART_Transmit(&huart2, output);
 	
 
 #endif
